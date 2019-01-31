@@ -9,17 +9,63 @@
     tools:context=".MainActivity">
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:ems="10"
+            android:hint="a"
+            android:inputType="numberSigned|numberDecimal" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:ems="10"
+            android:hint="b"
+            android:inputType="numberSigned|numberDecimal" />
+
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:ems="10"
+            android:hint="c"
+            android:inputType="numberSigned|numberDecimal" />
+    </LinearLayout>
+
     <WebView
+        android:id="@+id/wv"
         android:layout_width="match_parent"
-        android:layout_height="600px"
-        android:id="@+id/wv">
+        android:layout_height="600px">
 
     </WebView>
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="btn"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="250px"
+            android:layout_height="200px"
+            android:onClick="goToSite"
+            android:text="go to.." />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="250px"
+            android:layout_height="200px"
+            android:onClick="clear"
+            android:text="clear" />
+    </LinearLayout>
+
 </LinearLayout>

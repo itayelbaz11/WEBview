@@ -6,12 +6,14 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     WebView wv;
-    Button btn;
-    String URL="https://www.google.com/search?q=google&oq=google&aqs=chrome..69i57j69i60l3j0l2.1244j0j7&sourceid=chrome&ie=UTF-8";
+    Button btn,btn2;
+    EditText et1,et2,et3;
+    String aa,b,c,URL="https://www.google.com/search?ei=DXVCXKS6LbHrxgPV-YGYDw&q=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +22,29 @@ public class MainActivity extends AppCompatActivity {
 
         wv=(WebView) findViewById(R.id.wv);
         btn=(Button) findViewById(R.id.btn);
+        btn2=(Button) findViewById(R.id.btn2);
+        et1=(EditText) findViewById(R.id.et1);
+        et2=(EditText) findViewById(R.id.et2);
+        et3=(EditText) findViewById(R.id.et3);
 
         wv.getSettings().setJavaScriptEnabled(true);
         wv.setWebViewClient(new MyWebViewClient());
     }
 
-    public void btn(View view) {
+
+    public void goToSite(View view) {
+        aa=et1.getText().toString();
+        b=et2.getText().toString();
+        c=et3.getText().toString();
+        URL=URL+aa+"x%5E2"+b+"x%2B"+c+"&oq";
         wv.loadUrl(URL);
+
+    }
+
+    public void clear(View view) {
+        et1.setText("");
+        et2.setText("");
+        et3.setText("");
     }
 
     private class MyWebViewClient extends WebViewClient {
